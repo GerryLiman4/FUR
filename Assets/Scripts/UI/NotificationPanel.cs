@@ -39,9 +39,9 @@ public class NotificationPanel : MonoBehaviour
             AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
             normalizedTime = stateInfo.normalizedTime;
         }
-
-        notificationFinished?.Invoke();
+        
         gameObject.SetActive(false);
+        notificationFinished?.Invoke();
     }
 
 }

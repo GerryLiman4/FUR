@@ -18,11 +18,12 @@ public class AttackArea : MonoBehaviour
     {
         HealthController healthController = collision.GetComponent<HealthController>();
 
-        if (healthController.GetFactionId() == factionId) return;
+        if (healthController != null && healthController.GetFactionId() != factionId)
+        {
+            healthController.GetDamaged(transform.parent.gameObject, damage);
+            Attack?.Invoke();
 
-        healthController.GetDamaged(transform.parent.gameObject , damage);
-        Attack?.Invoke();
-
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
     }
 }

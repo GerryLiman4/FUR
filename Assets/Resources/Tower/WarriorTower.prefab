@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4343966090023982056, guid: 92e157a74fbd2a34080a3f4e51978260, type: 3}
+      propertyPath: damage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4343966090023982056, guid: 92e157a74fbd2a34080a3f4e51978260, type: 3}
+      propertyPath: attackCooldown
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 4606387424586516259, guid: 92e157a74fbd2a34080a3f4e51978260, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -50,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4701811672975318723, guid: 92e157a74fbd2a34080a3f4e51978260, type: 3}
       propertyPath: m_Name
-      value: Warrior
+      value: WarriorTower
       objectReference: {fileID: 0}
     - target: {fileID: 6072957463619210067, guid: 92e157a74fbd2a34080a3f4e51978260, type: 3}
       propertyPath: m_Sprite
@@ -58,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 7384290322352760091, guid: 8535bb0e31d2bf44783c99587e7364bc, type: 3}
     - target: {fileID: 7124329497016372174, guid: 92e157a74fbd2a34080a3f4e51978260, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

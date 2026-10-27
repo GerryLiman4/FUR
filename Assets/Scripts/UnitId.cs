@@ -6,7 +6,7 @@ public enum UnitId
     WarriorTower,
     MonkTower,
     Pawn = 201,
-    Warrior,
+    Monk,
 }
 
 

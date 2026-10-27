@@ -62,7 +62,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4701811672975318723, guid: 92e157a74fbd2a34080a3f4e51978260, type: 3}
       propertyPath: m_Name
-      value: Archer
+      value: ArcherTower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

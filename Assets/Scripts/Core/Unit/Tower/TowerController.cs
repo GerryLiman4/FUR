@@ -4,6 +4,7 @@ public class TowerController : MonoBehaviour
 {
     [SerializeField] public bool isAggro;
     [SerializeField] public SpriteRenderer attackRangeIndicator;
+    [SerializeField] public FactionId factionId = FactionId.Player;
 
     // tower info
     [SerializeField] public float attackRange = 2.0f;
@@ -17,7 +18,7 @@ public class TowerController : MonoBehaviour
     protected virtual void Start()
     {
         attackTimer = attackCooldown;
-        attackRangeIndicator.transform.localScale = new Vector2(attackRange,attackRange);
+        attackRangeIndicator.transform.localScale = new Vector2(attackRange, attackRange);
     }
     protected virtual void FixedUpdate()
     {
@@ -27,20 +28,19 @@ public class TowerController : MonoBehaviour
         if (attackTimer <= 0f)
         {
             // attack same target
-            if (currentAttackTarget != null && currentAttackTarget.CanBeTargeted())
+            if (currentAttackTarget != null && currentAttackTarget.CanBeTargeted() && factionId != currentAttackTarget.factionId)
             {
                 Collider2D[] hitList = GetTargetList();
                 foreach (Collider2D hit in hitList)
                 {
-                    if (hit.TryGetComponent(out HealthController targetHpController))
+                    HealthController targetHpController = hit.GetComponent<HealthController>();
+                    if (targetHpController != null && targetHpController != currentAttackTarget)
                     {
-                        if (targetHpController != null && targetHpController == currentAttackTarget)
-                        {
-                            currentAttackTarget = targetHpController;
-                            Attack();
-                            return;
-                        }
+                        currentAttackTarget = targetHpController;
+                        Attack();
+                        return;
                     }
+
                 }
             }
 
@@ -49,17 +49,17 @@ public class TowerController : MonoBehaviour
 
             foreach (Collider2D hit in hits)
             {
-                if (hit.TryGetComponent(out HealthController targetHpController))
+                HealthController targetHpController = hit.GetComponent<HealthController>();
+                if (targetHpController != null 
+                    && factionId != targetHpController.factionId)
                 {
-                    if (targetHpController != null)
-                    {
-                        currentAttackTarget = targetHpController;
-                        break;
-                    }
+                    currentAttackTarget = targetHpController;
+                    break;
                 }
+
             }
 
-            if(currentAttackTarget != null && currentAttackTarget.CanBeTargeted()) Attack();
+            if (currentAttackTarget != null && currentAttackTarget.CanBeTargeted()) Attack();
             return;
         }
         else
@@ -84,7 +84,7 @@ public class TowerController : MonoBehaviour
 
     protected virtual void Attack()
     {
-        currentAttackTarget.GetDamaged(gameObject,damage);
+        currentAttackTarget.GetDamaged(gameObject, damage);
         attackTimer = attackCooldown;
     }
 
@@ -92,5 +92,15 @@ public class TowerController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange / 2f);
+    }
+
+    private void OnMouseEnter()
+    {
+        attackRangeIndicator.gameObject.SetActive(true);
+    }
+
+    private void OnMouseExit()
+    {
+        attackRangeIndicator.gameObject.SetActive(false);
     }
 }
