@@ -2,9 +2,11 @@
 public enum UnitId
 {
     None,
-    Archer,
+    ArcherTower = 101,
+    WarriorTower,
+    MonkTower,
+    Pawn = 201,
     Warrior,
-    Monk,
 }
 
 

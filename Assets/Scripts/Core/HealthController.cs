@@ -45,4 +45,9 @@ public class HealthController : MonoBehaviour, IDamagable
     {
         return factionId;
     }
+
+    public bool CanBeTargeted()
+    {
+        return currentHp > 0 && hitbox.enabled;
+    }
 }

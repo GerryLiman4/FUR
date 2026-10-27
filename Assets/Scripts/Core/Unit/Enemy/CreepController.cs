@@ -67,11 +67,24 @@ public class CreepController : MonoBehaviour
     void Start()
     {
         attackArea.Attack += OnAttack;
+        hpController.Damaged += OnDamaged;
+        hpController.Died += OnDied;
+
         hpController.Initialize(factionId);
         attackArea.InitializeAttackArea(factionId, damage);
         //
         SetNextDestination(0);
         SwitchState(UnitStateId.Walk);
+    }
+
+    private void OnDied()
+    {
+        SwitchState(UnitStateId.Die);
+    }
+
+    private void OnDamaged()
+    {
+        // flashing
     }
 
     private void OnDestroy()

@@ -6,4 +6,5 @@ public interface IDamagable
     public FactionId GetFactionId();
     public void Initialize(FactionId designatedFactionId);
 
+    public bool CanBeTargeted();
 }
