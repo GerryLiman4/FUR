@@ -7,3 +7,12 @@ public enum GameStateId
     Wave,
     Finish,
 }
+
+public enum UnitStateId
+{
+    None,
+    Idle,
+    Walk,
+    Die,
+    Custom,
+}

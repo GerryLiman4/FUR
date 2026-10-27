@@ -25,8 +25,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Hitbox
+  - AttackArea
   - 
   - 
   - 
@@ -40,6 +40,12 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Character
+    uniqueID: 198958557
+    locked: 0
+  - name: UI
+    uniqueID: 2031276921
     locked: 0
   m_RenderingLayers:
   - Default
