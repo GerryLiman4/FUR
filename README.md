@@ -27,9 +27,9 @@ Honestly I started the project with the idea like PVZ or "Sir, We Have an Orc Pr
 I backed down from my idea and just go for bloons td like gameplay. I even search and push several assets for PVZ style game but removed later (Thus the title).
 
 Unfortunately I was busy last week, so I only did the test thoroughly for 2 days (on monday (26) - wednesday (28))
-```
-Sneak peek gameplay :
+
+## Sneak peek gameplay :
 
 https://github.com/user-attachments/assets/81192e8b-1723-4c5b-896d-723b9dead243
 
-
+```
