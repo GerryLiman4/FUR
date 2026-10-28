@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,5 +18,15 @@ public class GameManager : MonoBehaviour
 
         // Optional: Keep this manager alive when loading new scenes
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

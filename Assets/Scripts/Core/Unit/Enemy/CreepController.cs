@@ -17,7 +17,6 @@ public class CreepController : MonoBehaviour
     // unit info
     public float moveSpeed;
     public int damage = 1;
-
     public void SwitchState(UnitStateId designatedStateId, bool canOverride = false)
     {
         if (currentState == designatedStateId && !canOverride) return;
@@ -94,7 +93,7 @@ public class CreepController : MonoBehaviour
 
     private void OnAttack()
     {
-        SwitchState(UnitStateId.Die);
+        hpController.GetDamaged(gameObject,hpController.currentHp);
     }
 
     // Update is called once per frame

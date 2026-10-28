@@ -14,6 +14,7 @@ public class BaseController : MonoBehaviour
 
     private void OnDied()
     {
+        SignalManager.PlayerBaseDestroyed();
         Destroy(gameObject);
     }
 

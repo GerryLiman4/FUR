@@ -28,8 +28,8 @@ public class HealthController : MonoBehaviour, IDamagable
         healthBar.fillAmount = ((float)currentHp / (float)maxHp);
         if (currentHp <= 0f)
         {
-            Died?.Invoke();
             hitbox.enabled = false;
+            Died?.Invoke();
             return;
         }
         Damaged?.Invoke();
