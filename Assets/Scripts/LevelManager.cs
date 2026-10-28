@@ -239,10 +239,12 @@ public class LevelManager : MonoBehaviour
 
     public void Retry()
     {
-        FindFirstObjectByType<GameManager>();
+        GameManager gm = FindFirstObjectByType<GameManager>();
+        gm.LoadLevel();
     }
     public void GoToMainMenu()
     {
-
+        GameManager gm = FindFirstObjectByType<GameManager>();
+        gm.LoadMainMenu();
     }
 }
