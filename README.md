@@ -28,3 +28,8 @@ I backed down from my idea and just go for bloons td like gameplay. I even searc
 
 Unfortunately I was busy last week, so I only did the test thoroughly for 2 days (on monday (26) - wednesday (28))
 ```
+Sneak peek gameplay :
+
+https://github.com/user-attachments/assets/81192e8b-1723-4c5b-896d-723b9dead243
+
+
